@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5a2d8f25c5.js" crossorigin="anonymous"></script>
+    <script src="script.js" defer></script>
+    <title>Age Calculator</title>
+</head>
+<body>
+    <div class="main-div">
+        <section>
+            <section>
+                <p>Day</p>
+                <input class="input-data" data-day placeholder="DD" type="number" maxlength="2"><br>
+                <span>This field is required!</span>
+            </section>
+            <section>
+                <p>Month</p>
+                <input class="input-data" data-month placeholder="MM" type="number" maxlength="2"><br>
+                <span>This field is required!</span>
+            </section>
+            <section>
+                <p>Year</p>
+                <input class="input-data" data-year placeholder="YYYY" type="number" maxlength="4"><br>
+                <span>This field is required!</span>
+            </section>
+        </section>
+        <section>
+            <div class="clock-con" data-clock><i class="fa-solid fa-clock"></i></div>
+            <div></div>
+        </section>
+        <section>
+            <section>
+                <h2><i><span data-years>--</span>years</i></h2>
+            </section>
+            <section>
+                <h2><i><span data-months>--</span>months</i></h2>
+            </section>
+            <section>
+                <h2><i><span data-days>--</span>days</i></h2>
+            </section>
+        </section>
+    </div>
+</body>
+</html>
