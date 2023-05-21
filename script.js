@@ -1,4 +1,5 @@
 /* Variables */
+alert('pls be gentle, kakagawa ko lang sakanyaa huhuhu');
 const inputDay = document.querySelector('[data-day]');
 const inputMonth = document.querySelector('[data-month]');
 const inputYear = document.querySelector('[data-year]');
