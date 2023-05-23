@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    /* Colors */
+    --bgColor: #F0F0F0;
+    --cardColor: #FFF;
+    --gray: #999;
+    --black: #000;
+    --blue: #864CFF;
+
+    /* Width */
+    --mainDivWidth: 90%;
+    --inputDetailsWidth: 5em;
+
+    /* Height */
+    --inputDetailsHeight: 3em;
+
+    /* Font-size */
+    --inputFs: 1.1em;
+    --resultFs: 2.6em;
+    --clockFs: 2em;
+    --spanFs: .8em;
+}
+
+body {
+    background-color: var(--bgColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+body > .main-div {
+    width: var(--mainDivWidth);
+    background-color: var(--cardColor);
+    border-radius: 15px;
+    padding: 3em 1em;
+    
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    gap: 2em;
+    z-index: 1;
+    
+}
+
+body .main-div > section:nth-child(1) {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+body .main-div > section:nth-child(1) > section > input {
+    width: var(--inputDetailsWidth);
+    padding: .5em;
+    height: var(--inputDetailsHeight);
+    font-size: var(--inputFs);
+    border-radius: 7px;
+    border: 1.8px solid var(--gray);
+    outline: none;
+    color: var(--black);
+    font-weight: bold;
+    margin-bottom: .7em;
+}
+
+body .main-div > section:nth-child(1) > section > input ~ span {
+    color: red;
+    margin-top: 1em;
+    display: none;
+    text-align: center;
+    font-size: var(--spanFs);
+}
+
+body .main-div > section:nth-child(1) > section > input ~ span.invalid {
+    display: inline;
+}
+
+body .main-div > section:nth-child(1) > section > input.invalid {
+    border-color: red;
+}
+
+body .main-div > section:nth-child(1) > section > p {
+    font-weight: 900;
+    color: var(--black);
+    margin-bottom: .5em;
+    letter-spacing: .1em;
+}
+
+
+/* BREAKER */
+
+body .main-div > section:nth-child(2) {
+    width: 100%;
+    height: 5em;
+    position: relative;
+    display: flex;
+
+}   
+
+body .main-div > section:nth-child(2) > div:nth-child(1) {
+    width: 2.5em;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: var(--blue);
+    z-index: 99;
+    margin-inline: auto;
+    align-self: center;
+    transform: scale(1);
+    transition: all .6s;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--clockFs);
+    cursor: pointer;
+}
+
+body .main-div > section:nth-child(2) > div:nth-child(1):active {
+    transform: scale(1.5);
+    
+}
+
+.main-div > section:nth-child(2) > div:nth-child(1) > * {
+    color: var(--cardColor);
+}
+
+body .main-div > section:nth-child(2) > div:nth-child(2) {
+    width: 100%;
+    height: 3px;
+    background-color: var(--gray);
+    position: absolute; 
+    z-index: -1;
+    align-self: center;
+}
+
+/* Results */
+.main-div > section:nth-child(3) > section > h2 {
+    font-size: var(--resultFs);
+    font-weight: 900;
+    
+}
+
+.main-div > section:nth-child(3) > section > h2 span {
+    color: var(--blue);
+    margin-right: .4em;
+}
+
+
+@media (min-width: 480px) {
+    :root {
+        --inputDetailsWidth: 7em;
+        --resultFs: 3.7em;
+        --spanFs: .9em;
+    }
+}
+
+@media (min-width: 660px) {
+    :root {
+        --mainDivWidth: 40em;
+        --inputDetailsWidth: 9em;
+        --clockFs: 3em;
+    }
+
+    body > .main-div {
+        padding: 3em;
+        gap: 3.5em;
+        border-bottom-right-radius: 30%;
+    }
+
+    body .main-div > section:nth-child(2) > div:nth-child(2) {
+        height: 5px;
+    }
+
+    body .main-div > section:nth-child(2) {
+        justify-content: end;
+    }
+
+    body .main-div > section:nth-child(2) > div:nth-child(1) {
+        margin-inline: 0; 
+        right: 0;
+    }
+
+    body {
+        height: 45em;
+    }
+}
